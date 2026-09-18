@@ -6,7 +6,9 @@ public class HrNamesDemo {
 
         // TODO: filter HR → map name → sorted → toList
         List<String> hrNames = employees.stream()
-                // TODO: .filter(...)
+                // TODO: .filter(...) (In Prog.)
+                .filter(e -> e.getDept().equals("HR").map(Employee::getName)
+                                .sorted().collect(Collectors.toList());  // [Alice,Charlie]
                 // TODO: .map(...)
                 // TODO: .sorted()
                 // TODO: .toList()

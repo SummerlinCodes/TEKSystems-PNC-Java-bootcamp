@@ -1,5 +1,6 @@
 # Exercise 1 — Lambda and a Custom Functional Interface
 
+
 **Module 6** · Pre-lab practice · Checkpoint A · Exercises 1–7 Pass then Lab 6
 **Folder:** `examples/module-06-exercises/` ([setup](EXERCISES-INDEX.md))
 

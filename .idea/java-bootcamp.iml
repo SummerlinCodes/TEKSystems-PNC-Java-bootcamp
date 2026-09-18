@@ -8,11 +8,12 @@
       <sourceFolder url="file://$MODULE_DIR$/notes/Maven-Demo/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/notes/Module 0-Pre-Lab/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/notes/Module 1-Hello/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/notes/Module 2 Exercises/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/notes/Module 2-3 Practice/App2/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/notes/Module 2-3 Practice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/notes/Module 2/Module 2 Exercises/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/notes/Pack/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/notes/test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/Week 1/Module 1-7 Exercises/Module 6/starter" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

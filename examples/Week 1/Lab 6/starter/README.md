@@ -1,30 +1,30 @@
-# Lab 5 starter — 45-minute timed path
+# Lab 6 starter — 45-minute timed path
 
-Domain classes (`Book`, `Member`, `BorrowRecord`, `BookComparator`) and `Main` are mostly given. Fill `borrowBook` / `returnBook` / report TODOs. Complete every TODO yourself.
+`Employee` and `EmployeeData` are given. Fill **CORE** stream pipelines for menus **1–9**. Complete every TODO yourself.
 
 ## Activity card
 
 | | |
 | --- | --- |
-| **Objective** | Complete borrow/return Map invariants + report TODOs |
-| **Skills practiced** | List catalog + Map loans + summary / popular category |
-| **Expected outcome** | Smoke path prints Borrowed / Popular Category / Thank You |
+| **Objective** | Complete CORE filter/map/group/reduce TODOs + dashboard |
+| **Skills practiced** | Stream pipelines, Collectors, Optional, menu wiring |
+| **Expected outcome** | Menu 1 → 8 dashboard Average Salary **100680** → 9 Thank You |
 | **Estimated time** | ~45 minutes |
-| **Files** | Packaged suite under `Lab5-LibraryManagement/src/com/academy/library/` |
+| **Files** | Packaged suite under `Lab6-EmployeeAnalytics/src/com/academy/analytics/` |
 
-**Boilerplate reduced:** Domain models, menu `Main`, and add/register helpers are given — focus on loan Map logic and reports. Skip recreating those files.
+**Boilerplate reduced:** Domain model + seed data + menu `Main` are given — focus on CORE service/report stream TODOs. Menus **10–21** are Bonus stubs (print message; do not crash).
 
-Pacing: [`../../PACING.md`](../../PACING.md) · Full steps: [`../LAB-5-GUIDE.md`](../LAB-5-GUIDE.md)
+Pacing: [`../../PACING.md`](../../PACING.md) · Full steps: [`../LAB-6-GUIDE.md`](../LAB-6-GUIDE.md)
 
 ## Target copy path
 
-`~/java-bootcamp/examples/Lab5-LibraryManagement/`
+`~/java-bootcamp/examples/Lab6-EmployeeAnalytics/`
 
 ### Windows PowerShell
 
 ```powershell
-$src = "<path-to-course-repo>\labs\Week 1 - Java and JVM Foundations\module-05\lab5\starter\Lab5-LibraryManagement"
-$dst = "$env:USERPROFILE\java-bootcamp\examples\Lab5-LibraryManagement"
+$src = "<path-to-course-repo>\labs\Week 1 - Java and JVM Foundations\module-06\lab6\starter\Lab6-EmployeeAnalytics"
+$dst = "$env:USERPROFILE\java-bootcamp\examples\Lab6-EmployeeAnalytics"
 New-Item -ItemType Directory -Force -Path $dst | Out-Null
 Copy-Item "$src\*" $dst -Recurse -Force
 cd $dst
@@ -33,57 +33,70 @@ cd $dst
 ### macOS / bash
 
 ```bash
-SRC="<path-to-course-repo>/labs/Week 1 - Java and JVM Foundations/module-05/lab5/starter/Lab5-LibraryManagement"
-DST="$HOME/java-bootcamp/examples/Lab5-LibraryManagement"
+SRC="<path-to-course-repo>/labs/Week 1 - Java and JVM Foundations/module-06/lab6/starter/Lab6-EmployeeAnalytics"
+DST="$HOME/java-bootcamp/examples/Lab6-EmployeeAnalytics"
 mkdir -p "$DST"
 cp -R "$SRC"/. "$DST"/
 cd "$DST"
 ```
 
-## 45-minute checklist (ordered TODOs)
+## CORE methods for menus 1–9 (implement these)
 
-1. Skim domain models + given `addBook` / `registerMember` (do not recreate).
-2. Implement `LibraryService.borrowBook` (**required**).
-3. Implement `LibraryService.returnBook` (**required**).
-4. Implement `ReportService.displaySummaryReport` + `findMostPopularCategory` (**required**).
-5. **Bonus / optional:** `exportReportToFile`, performance comparison (menus 14 / 17) — starter prints a Bonus stub so the menu does not crash.
-6. Smoke test. Commit your work to your GitHub repo (no screenshots).
+| Menu | Feature | Methods to implement |
+| ---- | ------- | -------------------- |
+| 1 | Display Employees | `EmployeeService.displayAllEmployees` |
+| 2 | Employees By Department | `displayGroupedEmployees` (via `ReportService.displayEmployeesByDepartment`) |
+| 3 | Salary Report | `displayReductions` + `displaySummaryStatistics` + `displayPartitionedEmployees` |
+| 4 | Top Performers | `getTopPerformers` + `ReportService.displayTopPerformers` |
+| 5 | Highest Salary | `displayHighestPaidEmployeeOptional` |
+| 6 | Department Statistics | `getDepartmentStatistics` + `ReportService.displayDepartmentStatistics` |
+| 7 | Active Employees | `displayActiveEmployees` |
+| 8 | Dashboard | `ReportService.displayDashboard` + deps: `findTopPerformer`, `findDepartmentWithHighestAverageSalary`, `getTopSalaries` |
+| 9 | Exit | (given — no TODO) |
+
+## 45-minute checklist (ordered)
+
+1. **Classroom priority:** implement menu **1** (`displayAllEmployees`) + dashboard deps + `displayDashboard` (menu **8**).
+2. Smoke `1` → `8` → `9` and confirm **Average Salary : 100680**.
+3. Implement remaining CORE menus **2–7** (homework OK if timed class ends).
+4. Do **not** spend timed time on menus 10–21 (Bonus stubs already print a message).
+5. Commit your work to your GitHub repo (no screenshots).
 
 ## Smoke test
 
 ```powershell
 javac -d out `
-  src\com\academy\library\Book.java `
-  src\com\academy\library\Member.java `
-  src\com\academy\library\BorrowRecord.java `
-  src\com\academy\library\BookComparator.java `
-  src\com\academy\library\ReportService.java `
-  src\com\academy\library\LibraryService.java `
-  src\com\academy\library\Main.java
-java -cp out com.academy.library.Main
+  src\com\academy\analytics\Employee.java `
+  src\com\academy\analytics\EmployeeData.java `
+  src\com\academy\analytics\EmployeeService.java `
+  src\com\academy\analytics\ReportService.java `
+  src\com\academy\analytics\Main.java
+java -cp out com.academy.analytics.Main
 ```
 
-Interactive path (prompts in order):
+Interactive path (timed classroom): `1` (list) → `8` (dashboard) → `9` (exit).
 
-1. Menu `1` → Book ID `101`, Title `Java Basics`, Author `Aman`, Category `Programming`, **Price `55`**
-2. Menu `2` → Member ID `1`, Name `Riya`, Email `riya@test.com`, Phone `9999999999`
-3. Menu `6` → Book ID `101`, Member ID `1`
-4. Menu `10` → Reports
-5. Menu `7` → Book ID `101` (optional return)
-6. Menu `11` → Exit
+Exercise CORE menus 2–7 when ready (same run session or homework).
 
 **Expected output snippet:**
 
 ```text
-Book Added Successfully
-Member Registered Successfully
-Book Borrowed Successfully
-Reports
-Books : 1
-Borrowed : 1
-Available : 0
-Members : 1
-Most Popular Category : Programming
+Total Employees : 25
+...
+=============================
+Employee Analytics Dashboard
+=============================
+Employees : 25
+Average Salary : 100680
+Highest Salary : ...
+Lowest Salary : ...
+Departments : ...
+Top Performer : ...
+Highest Paid Department : ...
+Top 5 Highest Salaries
+...
+Active Employees : ...
+Inactive Employees : ...
 Thank You
 ```
 
@@ -92,6 +105,12 @@ Thank You
 | # | Criterion | Pass / Fail |
 | - | --------- | ----------- |
 | 1 | Project compiles | |
-| 2 | Borrow / return / summary reports work | |
+| 2 | Menu **1** + dashboard (**8**) produce expected stats (**Average Salary : 100680**) | |
 
-> Full GUIDE steps (export, performance, history) remain for homework / extended work. Bonus menu items should print a stub message, not crash.
+## CORE homework Pass (menus 2–7)
+
+| # | Criterion | Pass / Fail |
+| - | --------- | ----------- |
+| 1 | Menus 2–7 run without `UnsupportedOperationException` | |
+
+> Full GUIDE steps (bonus menus 10–21) remain for homework / extended work.
